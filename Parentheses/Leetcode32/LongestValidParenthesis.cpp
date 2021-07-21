@@ -18,9 +18,13 @@
  */
 
 #include<iostream>
+#include<string>
+#include<stack>
+#include<unordered_map>
 
 using namespace std;
 
+/* 力扣解法
 int longestValidParentheses(string s) {
     int left = 0, right = 0, maxlength = 0;
     for (int i = 0; i < s.length(); i++) {
@@ -49,6 +53,30 @@ int longestValidParentheses(string s) {
         }
     }
     return maxlength;
+} */
+
+int longestValidParentheses(const string &s){
+    //首先，合格字串的长度等于最后一个匹配的右括号下标减去前一个右括号下标
+    //因此，需要保证在移除栈中与最后一个右括号匹配的左括号之后，栈顶元素为前一个未匹配的右括号下标
+    //另外，一开始栈中需要先入栈一个-1以应对没有右括号的情况
+    stack<int> stk;
+    stk.push(-1);
+    int max_len = 0;
+    for (int i = 0; i < s.length(); i++){
+        if (s[i] == '('){//如果是左括号直接把下标入栈
+            stk.push(i);
+        }
+        else{
+            stk.pop();
+            if (stk.empty()){//只有栈中只有一个元素，上一步pop之后，栈中的元素才会为空
+                stk.push(i);
+            }
+            else{
+                max_len = max(max_len, i - stk.top());
+            }
+        }
+
+    }
 }
 
 int main(){
