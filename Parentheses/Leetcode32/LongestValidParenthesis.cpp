@@ -57,7 +57,7 @@ int longestValidParentheses(string s) {
 
 int longestValidParentheses(const string &s){
     //首先，合格字串的长度等于最后一个匹配的右括号下标减去前一个右括号下标
-    //因此，需要保证在移除栈中与最后一个右括号匹配的左括号之后，栈顶元素为前一个未匹配的右括号下标
+    //因此，需要保证栈底元素为前一个未匹配的右括号下标
     //另外，一开始栈中需要先入栈一个-1以应对没有右括号的情况
     stack<int> stk;
     stk.push(-1);
@@ -68,7 +68,9 @@ int longestValidParentheses(const string &s){
         }
         else{
             stk.pop();
-            if (stk.empty()){//只有栈中只有一个元素，上一步pop之后，栈中的元素才会为空
+            if (stk.empty()){//只有没有左括号下标入栈，才会导致pop之后栈为空
+            //要不然pop之后，栈中至少存在前一个未匹配的右括号下标
+            //此时直接入栈，使得栈中始终存在未匹配的右括号下标
                 stk.push(i);
             }
             else{
