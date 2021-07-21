@@ -24,7 +24,7 @@
 
 using namespace std;
 
-/* 力扣解法
+/*力扣解法
 int longestValidParentheses(string s) {
     int left = 0, right = 0, maxlength = 0;
     for (int i = 0; i < s.length(); i++) {
@@ -55,6 +55,11 @@ int longestValidParentheses(string s) {
     return maxlength;
 } */
 
+//参照上面解法的思路自己再写一遍
+int longestValidParentheses(const string &s){
+    int max_len;
+    return max_len;
+}
 
 /* int longestValidParentheses(const string &s){
     //首先，合格字串的长度等于最后一个匹配的右括号下标减去前一个右括号下标
