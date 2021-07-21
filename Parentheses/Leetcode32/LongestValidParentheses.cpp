@@ -56,7 +56,7 @@ int longestValidParentheses(string s) {
 } */
 
 
-int longestValidParentheses(const string &s){
+/* int longestValidParentheses(const string &s){
     //首先，合格字串的长度等于最后一个匹配的右括号下标减去前一个右括号下标
     //因此，需要保证栈底元素为前一个未匹配的右括号下标
     //另外，一开始栈中需要先入栈一个-1以应对没有右括号的情况
@@ -80,7 +80,7 @@ int longestValidParentheses(const string &s){
         }
     }
     return max_len;
-}
+} */
 
 int main(){
     string s;
