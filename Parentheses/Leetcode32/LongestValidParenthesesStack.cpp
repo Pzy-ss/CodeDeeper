@@ -24,44 +24,9 @@
 
 using namespace std;
 
-/*力扣解法
-int longestValidParentheses(string s) {
-    int left = 0, right = 0, maxlength = 0;
-    for (int i = 0; i < s.length(); i++) {
-        if (s[i] == '(') {
-            left++;
-        } else {
-            right++;
-        }
-        if (left == right) {
-            maxlength = max(maxlength, 2 * right);
-        } else if (right > left) {
-            left = right = 0;
-        }
-    }
-    left = right = 0;
-    for (int i = (int)s.length() - 1; i >= 0; i--) {
-        if (s[i] == '(') {
-            left++;
-        } else {
-            right++;
-        }
-        if (left == right) {
-            maxlength = max(maxlength, 2 * left);
-        } else if (left > right) {
-            left = right = 0;
-        }
-    }
-    return maxlength;
-} */
 
-//参照上面解法的思路自己再写一遍
+
 int longestValidParentheses(const string &s){
-    int max_len;
-    return max_len;
-}
-
-/* int longestValidParentheses(const string &s){
     //首先，合格字串的长度等于最后一个匹配的右括号下标减去前一个右括号下标
     //因此，需要保证栈底元素为前一个未匹配的右括号下标
     //另外，一开始栈中需要先入栈一个-1以应对没有右括号的情况
@@ -85,7 +50,7 @@ int longestValidParentheses(const string &s){
         }
     }
     return max_len;
-} */
+}
 
 int main(){
     string s;
