@@ -83,23 +83,6 @@ int longestValidParentheses(const string &s){
     left = right = 0;
     //从左到右检测不到类似((())左括号一直大于右括号的情况
     //所以还需要从右到左遍历
-    for (int i = 0; i < s.length(); i++){
-        if (s[i] == '('){
-            left ++;
-        }
-        else if (s[i] == ')'){
-            right ++;
-        }
-        //判断左右括号数量关系
-        if (right > left){
-            left = 0;
-            right = 0;
-        }
-        else if (left == right){
-            cur_len = left + right;
-        }
-        max_len = max(max_len, cur_len);
-    }    
     for (int i = s.length() - 1; i >= 0; i--){
         if (s[i] == '('){
             left ++;
