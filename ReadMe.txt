@@ -12,5 +12,6 @@
       4. 通过git log -p master..origin/master比较本地的master分支和origin/master分支的区别
       5. 通过git merge origin/master进行合并
       6. git的使用场景及流程参考博文：https://blog.csdn.net/muser_/article/details/97280708
+      7. github的快速入门参考教程：https://www.runoob.com/w3cnote/git-guide.html
 目前更新系列：
       1. 2021-07-20，Parentheses：字符串中括号匹配的问题(起源：字节跳动QoE质量算法工程师面试)
