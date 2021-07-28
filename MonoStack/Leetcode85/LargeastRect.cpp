@@ -39,20 +39,20 @@ int maximalRectangle(vector<vector<char>>& matrix) {
     int row = matrix.size();
     int col = matrix[0].size();
     if (row == 0 || col == 0) return 0;
-    vector<vector<char>> left;
+    int left[row][col];
     bool all_zero_flag = 0;
     for (int i = 0; i < row; i ++ ){
         int cur = 0;
-        for (int j = 0; j < col; j++){
+        for (int j = 0; j < col; j ++ ){
             if(matrix[i][j] == '1') {
                 cur ++ ;
                 all_zero_flag = 1;
             }
             else cur = 0;
-            left[i].push_back(cur);
+            left[i][j] = cur;
         }
     }
-    if(all_zero_flag) return 0;
+    if(!all_zero_flag) return 0;
     int res = 0;
     for (int j = 0; j < col; j++){//对于每一列，按照直方图最大面积计算
 
@@ -63,9 +63,11 @@ int maximalRectangle(vector<vector<char>>& matrix) {
             up[i] = stk.empty() ? -1 : stk.top();
             stk.push(i);
         }
+        stk = stack<int>();
         for (int i = row - 1; i >=0; i--){
             while (!stk.empty() && left[i][j] <= left[stk.top()][j]) stk.pop();
             down[i] = stk.empty() ? row : stk.top();
+            stk.push(i);
         }
 
         for (int i = 0; i < row; i ++ ){
