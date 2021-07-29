@@ -37,8 +37,9 @@ vector<vector<char>> matrix;
 vector<char> curr_row;
 int maximalRectangle(vector<vector<char>>& matrix) {
     int row = matrix.size();
+    if (row == 0) return 0;//这里一定要先做这个判断，否则matrix[0]可能取不到
     int col = matrix[0].size();
-    if (row == 0 || col == 0) return 0;
+    if (col == 0) return 0;
     int left[row][col];
     bool all_zero_flag = 0;
     for (int i = 0; i < row; i ++ ){
