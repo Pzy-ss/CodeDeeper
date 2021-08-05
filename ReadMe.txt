@@ -14,5 +14,5 @@
       6. git的使用场景及流程参考博文：https://blog.csdn.net/muser_/article/details/97280708
       7. github的快速入门参考教程：https://www.runoob.com/w3cnote/git-guide.html
 目前更新系列：
-      1. 2021-07-20，Parentheses：利用栈解决字符串中括号匹配的问题（起源：字节跳动QoE质量算法工程师面试）
+      1. 2021-07-20，ValidString：利用栈解决字符串中括号匹配的问题（起源：字节跳动QoE质量算法工程师面试）
       2. 2021-07-21，MonoStack： 利用单调栈解决寻找最近的最大/小数的问题（起源：Acwing单调栈的学习）
